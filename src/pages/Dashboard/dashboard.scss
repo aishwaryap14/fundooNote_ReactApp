@@ -1,0 +1,60 @@
+
+.dashAppbar{
+    color: #ec2e4d;
+    background:#ec2e4d;
+    padding: 15px;
+    height: 50px;
+  }
+
+.dashboardTools{
+    /* height: 85px; */
+    /* padding: 10px; */
+    display: flex;
+    justify-content: space-between;
+  }
+  .menubarName{
+    width: 20%;
+    display: flex;
+    color: black;
+    justify-content: space-between;
+  }
+  .menuBar{
+    margin: 5px;
+  }
+  .appName{
+    margin: 5px;
+  }
+  .searchBar{
+    display: flex;
+    background: pink;
+    border-radius: 3px;
+    /* padding-top: inherit; */
+    width: 50%;
+    /* justify-content: space-between; */
+  }
+  .search-icon{
+    margin: 10px;
+  }
+  .search-field{
+    color: black;
+  }
+  .cartList{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+  }
+  .cart-icon{
+    margin: 5px;
+  }
+  .list-icon{
+    margin: 5px;
+  }
+  .user-icon{
+    margin: 5px;
+  }
+  .addNotes{
+    display: flex;
+    justify-content: center;
+  }
+  
+  

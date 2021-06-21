@@ -12,6 +12,173 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+/* .SignUpContainer{
+  justify-content: center;
+  align-items: center;
+} */
+body {
+  justify-content: center;
+  /* align-items: center; */
+}
+.MuiFormControl-root{
+  height: "30px";
+  padding: "10px";
+}
+header {
+  color: #ec435f;
+  font-size: 15px;
+  font-style: inherit;
+  font-weight: bolder;
+  font-variant: all-small-caps;
+}
+.cardContainer {
+  width: 400px;
+  height: 500px;
+  padding: 10px;
+}
+.LoginCardContainer{
+  width: 400px;
+  height: 350px;
+  padding: 10px;
+}
+.nameContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  /* padding: 15px 15px; */
+}
+.firstname{
+  padding: 10px;
+  height: 50px;
+}
+.lastname{
+  padding: 10px;
+  height: 50px;
+}
+.emailContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 35px; 
+}
+.email {
+  width: 95%;
+  padding: 10px;
+  height: 50px;
+}
+.pwdContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 35px; 
+}
+.newPassword{
+  width: 95%;
+  padding: 10px;
+  height: 50px;
+  /* padding-top: 15px; */
+}
+.confirmPwdContainer{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 46px; 
+}
+.conPwd{
+  width: 95%;
+  padding: 10px;
+  height: 50px;
+}
+.ConPassword{
+  width: 95%;
+  padding: 10px;
+  height: 50px;
+}
+.signUpButtonContainer{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 35px;
+  width: 95%;
+}
+.signup{
+  font-weight: bold;
+  width: 40%;
+  height: 40px;
+  border-radius: 3 pt;
+  background: #eeaeb8;
+  border: 0px;
+  color: #ec2e4d;
+  font-size: 15px;
+  border-radius: 8rem;
+}
+.loginButtonContainer{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 35px;
+  width: 95%;
+}
+.login{
+  font-weight: bold;
+  width: 40%;
+  height: 40px;
+  border-radius: 3 pt;
+  background: #eeaeb8;
+  border: 0px;
+  color: #ec2e4d;
+  font-size: 15px;
+  border-radius: 8rem;
+}
+.resetPwd{
+  font-weight: bold;
+  width: 40%;
+  height: 40px;
+  border-radius: 3 pt;
+  background: #eeaeb8;
+  border: 0px;
+  color: #ec2e4d;
+  font-size: 15px;
+  border-radius: 8rem;
+  margin-top: 46px;
+}
+.SignUpContainer{
+  display: flex;
+  /* width: 400px; */
+  height: 100%;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  flex-direction: column;
+}
+.search-bar{
+  background: #2f3b81;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 15px;
+  width: 30%;
+  color: white;
+}
+
+
+#searchInput{
+  font-size: 18px;
+  color: black;
+}
+
+
+.loginContainer{
+  display: flex;
+  /* width: 400px; */
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+}
+.LinkText {
+  text-decoration: none;
+  margin-top: 15px;
+  font-size: larger;
+  cursor: pointer;
+}
+
 
 .App-header {
   background-color: #282c34;

@@ -1,0 +1,36 @@
+.note-card{
+    display: flex;
+    margin:40px;
+    height:90px; 
+    width:500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-title{
+    width:500px;
+    height:170px;
+    margin:40px;
+}
+
+.card-content{
+    margin: 5px;
+    width:450px;
+    height:50px;
+    // padding: 5px 5px 5px 40px;
+    padding-left: 40px;
+    font:x-large 
+    // background: #fde7ea; 
+}
+
+.close-note{
+    // width: 70px;
+    // height: 30px;
+    font-size: larger;
+    color: #ec2e4d;
+    font-weight: 700;
+    margin: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}

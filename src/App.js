@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import SignUp from './pages/sign_Up/signUp';
+import{ BrowserRouter as Router,Switch,Route} from 'react-router-dom'  
+import Login from './pages/login/login';
+import ResetPassword from './pages/ResetPassword/resetPassword';
+import DashBoard from './pages/Dashboard/dashboard';
+import  NotesCard  from './pages/NotesCard/notesCard';
+import ForgotPwd from './pages/ForgotPassword/forgotPwd';
+import drawer from './pages/menuDrawer/drawer'
+import Allnotes from './pages/DisplayNotes/displayNotes'
+import hooks from './pages/DisplayNotes/hooks'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={SignUp}/>
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/signUp" component={SignUp}/>
+          <Route exact path="/resetPassword/:token" component={ResetPassword}/>
+          <Route exact path="/dashboard" component={DashBoard}/>
+          <Route exact path="/notesCard" component={NotesCard}/>
+          <Route exact path="/forgotPwd" component={ForgotPwd}/>
+          <Route exact path="/drawer" component={drawer}/>
+          <Route excat path="/allnotes" component={Allnotes}/>
+          <Route exact path="/hooks" component={hooks}/>
+        </Switch>
+      </Router>
     </div>
   );
 }
