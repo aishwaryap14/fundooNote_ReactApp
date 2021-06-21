@@ -1,6 +1,7 @@
 import React, { useEffect, useState, props } from 'react';
 import {withRouter}  from 'react-router-dom';
 import { getAllNotes } from '../noteService';
+import './displayNotes.scss';
 
 const DisplayNote = props => {
     const [allNotes, setAllNotes]= useState([]);
@@ -56,12 +57,12 @@ const DisplayNote = props => {
 //     }
 
     return(
-        <div className="card-container"style={{display:'flex',marginLeft:'200px',marginRight:'200px'}} >
+        <div className="card-container" >
             {/* <p><strong>{props.allNotes}</strong></p> */}
             {allNotes.map(notes => {
                 console.log("Notes: ", notes);
         // return <displayNote notes={notes} key={notes.id} />;
-        return (<p  style={{color:'black',width: "10%",border: "solid 3px #d3d3d3",margin: "10px auto"}}>
+        return (<p className="cards-display" >
         <strong>{notes.title}</strong>
         <p>{notes.description}</p>
     </p>)
