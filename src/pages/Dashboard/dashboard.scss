@@ -1,7 +1,7 @@
 
 .dashAppbar{
-    color: #ec2e4d;
-    background:#ec2e4d;
+    color: #fb0;
+    background:#fb0;
     padding: 15px;
     height: 50px;
   }
@@ -26,11 +26,14 @@
   }
   .searchBar{
     display: flex;
-    background: pink;
+    background: #f0b000;
     border-radius: 3px;
     /* padding-top: inherit; */
     width: 50%;
     /* justify-content: space-between; */
+  }
+  .searchBar:hover{
+    background: #f3cb5d;
   }
   .search-icon{
     margin: 10px;
