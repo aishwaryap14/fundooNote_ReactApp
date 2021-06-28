@@ -7,7 +7,7 @@ export function getAllNotes() {
             
         headers: {
             // Authorization: localStorage.getItem('token')
-            Authorization: 'tWmyFnTJTAw0ykaZjmIt4hhkXjxu3cXVOBi4CAB9LDvKpEFsIYKWXMBFr7Vu8LhA'
+            Authorization: localStorage.getItem('token')
         }
     });
     return response;

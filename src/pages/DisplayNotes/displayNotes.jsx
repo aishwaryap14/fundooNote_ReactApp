@@ -1,7 +1,13 @@
 import React, { useEffect, useState, props } from 'react';
 import {withRouter}  from 'react-router-dom';
-import { getAllNotes } from '../noteService';
+import { getAllNotes } from '../../services/noteService'
 import './displayNotes.scss';
+import AddAlertIcon from '@material-ui/icons/AddAlert';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import ColorLensIcon from '@material-ui/icons/ColorLens';
+import ImageIcon from '@material-ui/icons/Image';
+import ArchiveIcon from '@material-ui/icons/Archive';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const DisplayNote = props => {
     const [allNotes, setAllNotes]= useState([]);
@@ -24,13 +30,13 @@ const DisplayNote = props => {
         // console.log("token localStorage: ", this.props.match.params.token);
         console.log("in use effect of get note")
         getAllNotes().then((res) => {
-            console.log("response: ", res.data.data.data);
+            // console.log("response: ", res.data.data.data);
             let notesData = res.data.data.data;
             // allNotes=res.data.data.data;
-            console.log("response2: ", notesData);
-            console.log("title: ",{notesData})
+            // console.log("response2: ", notesData);
+            // console.log("title: ",{notesData})
             setAllNotes(res.data.data.data);
-            console.log("allNotes", allNotes);
+            // console.log("allNotes", allNotes);
         })
     });
 
@@ -57,16 +63,30 @@ const DisplayNote = props => {
 //     }
 
     return(
-        <div className="card-container" >
+        <div className="cards">
+        <card className="card-container" >
             {/* <p><strong>{props.allNotes}</strong></p> */}
             {allNotes.map(notes => {
-                console.log("Notes: ", notes);
-        // return <displayNote notes={notes} key={notes.id} />;
-        return (<p className="cards-display" >
-        <strong>{notes.title}</strong>
-        <p>{notes.description}</p>
-    </p>)
-      })}
+                // console.log("Notes: ", notes);
+            // return <displayNote notes={notes} key={notes.id} />;
+            return (
+                <div>
+                    <p className="cards-display" >
+                    <strong>{notes.title}</strong>
+                    <p>{notes.description}</p>
+                    <div className="notecard-icon">
+                        <AddAlertIcon fontSize='medium'title='remind me' id ="AddAlertIcon"  />
+                        <PersonAddIcon fontSize='medium' id="PersonAddIcon"/>
+                        <ColorLensIcon fontSize='medium' id="ColorLensIcon" />
+                        <ImageIcon fontSize='medium' id="ImageIcon"/>
+                        <ArchiveIcon fontSize='medium' id="ArchiveIcon" />
+                        <MoreVertIcon fontSize='medium' id="MoreVertIcon" />
+                    </div>
+                    </p>
+                </div>)
+            })}
+
+        </card>
         </div>
     )
 }

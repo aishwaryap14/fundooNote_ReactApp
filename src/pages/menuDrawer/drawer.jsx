@@ -9,53 +9,54 @@ import ArchiveIcon from '@material-ui/icons/Archive';
 import DeleteIcon from '@material-ui/icons/Delete';
 // import classNames from 'classnames';
 
+const theme = createMuiTheme( {
+    overrides: {
+        MuiDrawer:{
+            paper:{
+            position:"initial"
+            },
+            modal:{
+                marginTop:"40px"
+            }
+            
+        },
+        MuiBackdrop:{
+            root:{
+                position:"initial" ,
+                
+            }
+        }
+    }
+});
+
 
 const MenuCard = ({propsOpenDrawer}) => {
-    const { classes, theme } = propsOpenDrawer;
-    // console.log("opendr: ", propsOpenDrawer);
-    // const [opendrawer, setOpenDrawer] = useState(propsOpenDrawer);
-
-        // const handleOpenDrawer =() => {
-        //     setOpenDrawer(propsOpenDrawer) ;
-        // }
-        // const handleCloseDrawer = () => {
-        //     console.log("before", opendrawer);
-        //     setOpenDrawer(propsOpenDrawer) ;
-        //     console.log("after", opendrawer);
-        // }
-        
-        
+    const { classes, theme } = propsOpenDrawer;       
         return ( 
-            propsOpenDrawer ? (
-        <div className="sidenav" >
-            <div className="notes-image">
-                {/* <img src={notesImage} alt=""/> */}
-                <NoteIcon fontSize="large" color="action"/>
-            </div>
-            <div className="reminder-image">
-                <AccessAlarmIcon fontSize="large" color="action"/>
-            </div>
-            <div className="editCard-labels">
-                <CreateIcon fontSize="large" color="action"/>
-            </div>
-            <div className="archive-mode">
-                <ArchiveIcon fontSize="large" color="action"/>
-            </div>
-            <div className="trash-image">
-                <DeleteIcon fontSize="large" color="action"/>
-            </div>
+        //     propsOpenDrawer ? (
+        // <div className="sidenav" >
+        //     <div className="notes-image">
+        //         {/* <img src={notesImage} alt=""/> */}
+        //         <NoteIcon fontSize="large" color="action"/>
+        //     </div>
+        //     <div className="reminder-image">
+        //         <AccessAlarmIcon fontSize="large" color="action"/>
+        //     </div>
+        //     <div className="editCard-labels">
+        //         <CreateIcon fontSize="large" color="action"/>
+        //     </div>
+        //     <div className="archive-mode">
+        //         <ArchiveIcon fontSize="large" color="action"/>
+        //     </div>
+        //     <div className="trash-image">
+        //         <DeleteIcon fontSize="large" color="action"/>
+        //     </div>
            
-        </div> ) : 
-        (
+        // </div> ) : 
+        // (
            
         <div className="sidenav"  style={{width:'15%',marginLeft:'-10px',fontStyle:'initial',fontWeight:'bold',background: '#f5d4d9',transition:'width 2s',transitionDelay:'0.5s'}}>
-        {/* <Drawer
-            variant="permanent"
-            // classes={{
-            //   paper: (classes.drawerPaper, propsOpenDrawer && classes.drawerPaperClose),
-            // }}
-            // open={this.state.open}
-          > */}
+        <Drawer style={{width:"240px",variant:"permanent",marginTop:"80px",height:"60rem"}} open={propsOpenDrawer}>
             <div className="notes-image">
                 <NoteIcon fontSize="large" color="action"/>
                 <label style={{color:'black'}}>Notes</label>
@@ -76,12 +77,12 @@ const MenuCard = ({propsOpenDrawer}) => {
                 <DeleteIcon fontSize="large" color="action"/>
                 <label style={{color:'black'}}>Trash</label>
             </div>
-            {/* </Drawer> */}
+        </Drawer>
         </div>
         
         )
        
-        )
+        // )
     
         
     

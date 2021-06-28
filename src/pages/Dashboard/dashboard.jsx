@@ -4,12 +4,21 @@ import React,{Component} from 'react';
 import SearchIcon from '@material-ui/core/Icon';
 import './dashboard.scss';
 import NoteCard from '../NotesCard/notesCard.jsx';
-import MenuDrawer from '../menuDrawer/drawer';
+import MenuDrawer from '../menuDrawer/drawer2';
+import TemporaryDrawer from '../menuDrawer/drawer2';
 import DisplayNotes from '../DisplayNotes/displayNotes';
 import MenuIcon from '@material-ui/icons/Menu';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import ListIcon from '@material-ui/icons/List';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+import NoteIcon from '@material-ui/icons/Note';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import CreateIcon from '@material-ui/icons/Create';
+import ArchiveIcon from '@material-ui/icons/Archive';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {withRouter}  from 'react-router-dom';
+
 
 
 class DashBoard extends Component {
@@ -32,10 +41,10 @@ class DashBoard extends Component {
 render(){
     return( 
 <div className="dashboard-comp">
-    <div className="dashAppbar">
+    <div className="dashAppbar" >
     <div className="dashboardTools">
         <div className="menubarName">
-            <div className="menuBar" onClick={this.handleDrawer}>
+            <div className="menuBar" id="menuBar" onClick={this.handleDrawer}>
                 <a><MenuIcon fontSize="large" color="action"/></a>
             </div>
             <div className="appName">
@@ -65,13 +74,34 @@ render(){
             </div>
         </div>
     </div>
-    <MenuDrawer propsOpenDrawer={this.state.setDrawer}/>
+    <TemporaryDrawer propsOpenDrawer={this.state.setDrawer}/>
+        <div className="sidenav" >
+            <div className="notes-image">
+                {/* <img src={notesImage} alt=""/> */}
+                <NoteIcon fontSize="large" color="action"/>
+            </div>
+            <div className="reminder-image">
+                <AccessAlarmIcon fontSize="large" color="action"/>
+            </div>
+            <div className="editCard-labels">
+                <CreateIcon fontSize="large" color="action"/>
+            </div>
+            <div className="archive-mode">
+                <ArchiveIcon fontSize="large" color="action"/>
+            </div>
+            <div className="trash-image">
+                <DeleteIcon fontSize="large" color="action"/>
+            </div>
+        </div>
+    
     </div>
     <div className="addNotes">
         
         <NoteCard/>
     </div>
+    <div className="displayNotes">
     <DisplayNotes/>
+    </div>
 </div>
     )
 }

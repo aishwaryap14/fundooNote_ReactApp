@@ -1,27 +1,17 @@
 import {Card, createMuiTheme, Link, TextField, Snackbar} from '@material-ui/core';
 import React,{Component} from 'react';
-import {signUp} from '../userService';
+import {signUp} from '../../services/userService';
 import './signUp.scss';
 const theme = createMuiTheme( {
     overrides: {
-        // MuiInputBase:{
-        //     input:{
-        //         height: "5px",
-        //         padding:"10px"
-        //     }
-        // },
+        
         MuiFormControl: {
-            // root: {
+           
                 height: "30px",
                 padding: "10px"
-            // }
+            
         },
-        // MuiOutlinedInput:{
-        //     input:{
-        //         height:"30px",
-        //         padding:"10px"
-        //     }
-        // }
+       
     },
 });
 
@@ -122,11 +112,7 @@ class SignUp extends Component {
                 ConPwdErr:""
             })
             console.log("confirm pwd is valid");
-        // }else {
-        //     console.log("confirm pwd not valid");
-        //     this.setState( {
-        //         ConPwdErr:"Password not Matched"
-        //     })
+        
             
         }
     }

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {withRouter}  from 'react-router-dom';
 import {Card, createMuiTheme,Link, TextField, Snackbar} from '@material-ui/core';
-import {resetPassword} from '../userService';
+import {resetPassword} from '../../services/userService';
 class ResetPassword extends Component {
     constructor() {
         super();
@@ -76,10 +76,6 @@ class ResetPassword extends Component {
     }
 
     render() {
-        console.log("token Id: ", this.props.match.params.token)
-        
-        localStorage.setItem('token',this.props.match.params.token);
-        console.log("token localStorage: ", this.props.match.params.token);
         return(
             <div className="loginContainer">
                 <Card className="LoginCardContainer">

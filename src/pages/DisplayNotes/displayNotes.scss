@@ -1,15 +1,33 @@
 .cards-display {
     color:black;
-    width: 20%;
-    margin: 25px ;
+    width: 75%;
+    margin: 25px 45px 25px 25px ;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 2px 2px 8px 3px #afafaf;
+    box-shadow: 1px 1px 6px 1px #9c9c9c;
     height: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .card-container{
     display:flex;
     margin-left: 300px;
     margin-right: 300px;
+    max-width: 750px;
+    min-width: 750px;
+    flex: 1 1 750px;
+}
+
+.notecard-icon {
+    width: 100%;
+    padding:2px;
+    // margin-left: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards{
+    width: 60%;
 }

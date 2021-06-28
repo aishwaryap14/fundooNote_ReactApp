@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {withRouter}  from 'react-router-dom';
 import {Card, createMuiTheme,Link, TextField, Snackbar} from '@material-ui/core';
 import signUp from '../sign_Up/signUp.jsx';
-import {forgotPwd} from '../userService';
+import {forgotPwd} from '../../services/userService';
 import './forgotPwd.scss';
 
 class ForgotPassword extends Component {

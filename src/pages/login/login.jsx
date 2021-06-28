@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {withRouter}  from 'react-router-dom';
 import {Card, createMuiTheme,Link, TextField, Snackbar} from '@material-ui/core';
 import signUp from '../sign_Up/signUp.jsx';
-import {login} from '../userService';
+import {login} from '../../services/userService';
 import './login.scss';
 
 class Login extends Component {
@@ -16,7 +16,8 @@ class Login extends Component {
             login:'',
             loginErr:'',
             snackBarOpen: false,
-            snackBarMessage:''
+            snackBarMessage:'',
+            token:''
         }
        }
 
@@ -62,7 +63,10 @@ class Login extends Component {
         }
         if(this.state.password !== undefined || this.state.email !== undefined) {
             await login(loginData).then((res) => {
-                console.log("response: ", res);
+                console.log("response: ", res.data.id);
+                localStorage.setItem('token',res.data.id);
+                console.log("localstorage token: ", res.data.id);
+                // console.log(res.data.data);
                 this.setState({
                     snackBarOpen: true,
                     snackBarMessage: "Login successfull"
@@ -78,6 +82,9 @@ class Login extends Component {
     }
 
     render() {
+        // console.log(response.data.data);
+        // localStorage.setItem('token',this.props.match.params.token);
+        // console.log("token localStorage: ", this.props.match.params.token);
         return(
             <div className="loginContainer">
                 <Card className="LoginCardContainer">
