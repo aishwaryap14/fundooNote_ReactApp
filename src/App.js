@@ -5,12 +5,12 @@ import{ BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import Login from './pages/login/login';
 import ResetPassword from './pages/ResetPassword/resetPassword';
 import DashBoard from './pages/Dashboard/dashboard';
-import  NotesCard  from './pages/NotesCard/notesCard';
+import  NotesCard  from './components/NotesCard/notesCard';
 import ForgotPwd from './pages/ForgotPassword/forgotPwd';
-import drawer from './pages/menuDrawer/drawer'
-import Allnotes from './pages/DisplayNotes/displayNotes'
-import hooks from './pages/DisplayNotes/hooks'
-import TemporaryDrawer from './pages/menuDrawer/drawer2'
+// import drawer from './components/menuDrawer/drawer'
+import Allnotes from './components/DisplayNotes/displayNotes'
+import hooks from './components/DisplayNotes/hooks'
+import TemporaryDrawer from './components/menuDrawer/drawer2'
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/dashboard" component={DashBoard}/>
           <Route exact path="/notesCard" component={NotesCard}/>
           <Route exact path="/forgotPwd" component={ForgotPwd}/>
-          <Route exact path="/drawer" component={drawer}/>
+          {/* <Route exact path="/drawer" component={drawer}/> */}
           <Route excat path="/allnotes" component={Allnotes}/>
           <Route exact path="/hooks" component={hooks}/>
           <Route exact path="/dra" component={TemporaryDrawer}/>

@@ -3,7 +3,7 @@
     color: #fb0;
     background:#fb0;
     padding: 15px;
-    height: 50px;
+    height: 45px;
   }
 
 .dashboardTools{
@@ -33,7 +33,7 @@
     /* justify-content: space-between; */
   }
   .searchBar:hover{
-    background: #f3cb5d;
+    background: #eeedec;
   }
   .search-icon{
     margin: 10px;
@@ -45,6 +45,7 @@
     display: flex;
     justify-content: space-between;
     width: 10%;
+    margin-right: 20px;
   }
   .cart-icon{
     margin: 5px;

@@ -9,10 +9,15 @@ import ImageIcon from '@material-ui/icons/Image';
 import ArchiveIcon from '@material-ui/icons/Archive';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import Avatar from '@material-ui/core/Avatar';
+import Chip from '@material-ui/core/Chip';
+
 // import './popoverOptions';
 import Remindme from './popoverOptions';
 
-    const NoteCard = () => {
+    const NoteCard = (propChip) => {
+        console.log("chip props: ", propChip);
         const [openCard, setOpenCard] = useState(true);
         const [openRemindme, setOpenRemindme] = useState(false);
 
@@ -40,8 +45,13 @@ import Remindme from './popoverOptions';
         (<Card className="note-title"   >
             <InputBase className="card-content"  placeholder="Title" aria-label="Title" style={{fontSize:'1.5rem'}}/>
             
-            <InputBase className="card-content"  placeholder="Discription" aria-label="Discription" style={{fontSize:'1.5rem'}}/>
-            
+            <InputBase className="card-content"  placeholder="Discription" aria-label="Discription" style={{fontSize:'1.5rem'}} />
+            <div>
+                <Chip>
+                <Avatar><AccessTimeIcon /></Avatar>
+                <div>{propChip}</div>
+                </Chip>
+            </div>
             <div className="options-icon">
             <div className="notecard-icon">
                 <PopoverPopupState fontSize='medium'  title='remind me' id ="AddAlertIcon" onClick={handleRemindMe} />

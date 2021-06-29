@@ -3,21 +3,15 @@ import {Card, createMuiTheme, Link, TextField, Snackbar, AppBar,Toolbar,IconButt
 import React,{Component} from 'react';
 import SearchIcon from '@material-ui/core/Icon';
 import './dashboard.scss';
-import NoteCard from '../NotesCard/notesCard.jsx';
-import MenuDrawer from '../menuDrawer/drawer2';
-import TemporaryDrawer from '../menuDrawer/drawer2';
-import DisplayNotes from '../DisplayNotes/displayNotes';
+import NoteCard from '../../components/NotesCard/notesCard';
+import TemporaryDrawer from '../../components/menuDrawer/drawer2';
+import DisplayNotes from '../../components/DisplayNotes/displayNotes';
 import MenuIcon from '@material-ui/icons/Menu';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import ListIcon from '@material-ui/icons/List';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-import NoteIcon from '@material-ui/icons/Note';
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import CreateIcon from '@material-ui/icons/Create';
-import ArchiveIcon from '@material-ui/icons/Archive';
-import DeleteIcon from '@material-ui/icons/Delete';
-import {withRouter}  from 'react-router-dom';
+
 
 
 

@@ -1,0 +1,4 @@
+module.exports = {
+   getAllNotes: "getNotesList"
+}
+    
