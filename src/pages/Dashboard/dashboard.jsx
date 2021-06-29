@@ -75,33 +75,16 @@ render(){
         </div>
     </div>
     <TemporaryDrawer propsOpenDrawer={this.state.setDrawer}/>
-        <div className="sidenav" >
-            <div className="notes-image">
-                {/* <img src={notesImage} alt=""/> */}
-                <NoteIcon fontSize="large" color="action"/>
-            </div>
-            <div className="reminder-image">
-                <AccessAlarmIcon fontSize="large" color="action"/>
-            </div>
-            <div className="editCard-labels">
-                <CreateIcon fontSize="large" color="action"/>
-            </div>
-            <div className="archive-mode">
-                <ArchiveIcon fontSize="large" color="action"/>
-            </div>
-            <div className="trash-image">
-                <DeleteIcon fontSize="large" color="action"/>
-            </div>
-        </div>
+      
     
     </div>
     <div className="addNotes">
         
         <NoteCard/>
     </div>
-    <div className="displayNotes">
+    
     <DisplayNotes/>
-    </div>
+    
 </div>
     )
 }

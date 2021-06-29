@@ -24,12 +24,15 @@ const theme = createMuiTheme( {
         MuiDrawer:{
             paperAnchorLeft:{
             top: "79px",
-           
+            // left: "60px",
             height: "100%",
-
+            width: "190px",
             outline: "0",
-
+            background:"#fafafa",
             zIndex: "0"
+            },
+            paperAnchorDockedLeft:{
+                borderRight:"none"
             },
             modal:{
                 marginTop:"40px"
@@ -73,25 +76,33 @@ const theme = createMuiTheme( {
             style={{width:"240px",top:"80px"}}>
                 {/* {list(anchor)} */}
 
-        <div className="sidenav" >
-            <IconButton onClick={handleDrawer}>
-                <ChevronLeftIcon /> 
-            </IconButton>
+        <div  >
+           
+
+
             <div className="notes-image">
-                {/* <img src={notesImage} alt=""/> */}
+                <div>
                 <NoteIcon fontSize="large" color="action"/>
+                </div>
+                <div id="label-tags"><label>Notes</label></div>
             </div>
             <div className="reminder-image">
-                <AccessAlarmIcon fontSize="large" color="action"/><label>Reminder</label>
+                <div>
+                <AccessAlarmIcon fontSize="large" color="action"/>
+                </div>
+                <div id="label-tags"><label>  Reminder</label></div>
             </div>
             <div className="editCard-labels">
                 <CreateIcon fontSize="large" color="action"/>
+                <div id="label-tags"><label>Edit</label></div>
             </div>
             <div className="archive-mode">
                 <ArchiveIcon fontSize="large" color="action"/>
+                <div id="label-tags"><label>Archieves</label></div>
             </div>
             <div className="trash-image">
                 <DeleteIcon fontSize="large" color="action"/>
+                <div id="label-tags"><label>Trash</label></div>
             </div>
         </div>
             </Drawer>

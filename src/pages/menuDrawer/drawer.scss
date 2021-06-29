@@ -1,16 +1,17 @@
-.sidenav {
-    width: 15%;
-    height: 56rem;
-    margin-top: 25px;
-    margin-left: -10px;
+// .sidenav {
+//     width: 15%;
+//     height: 56rem;
+//     margin-top: 25px;
+//     margin-left: -10px;
     
-}
+// }
 
 .notes-image {
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 40px;
 }
 
 .reminder-image {
@@ -43,4 +44,12 @@
 
 .swipe-drawer {
     margin-top: 80px;
+}
+
+#label-tags {
+    width: 70px;
+    display: flex;
+    justify-content: start;
+    font-size: large;
+    font-weight: bold;
 }

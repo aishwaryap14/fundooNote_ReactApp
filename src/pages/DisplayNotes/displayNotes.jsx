@@ -64,13 +64,13 @@ const DisplayNote = props => {
 
     return(
         <div className="cards">
-        <card className="card-container" >
+        
             {/* <p><strong>{props.allNotes}</strong></p> */}
             {allNotes.map(notes => {
                 // console.log("Notes: ", notes);
             // return <displayNote notes={notes} key={notes.id} />;
             return (
-                <div>
+                <div className="card-details">
                     <p className="cards-display" >
                     <strong>{notes.title}</strong>
                     <p>{notes.description}</p>
@@ -86,7 +86,7 @@ const DisplayNote = props => {
                 </div>)
             })}
 
-        </card>
+        
         </div>
     )
 }
