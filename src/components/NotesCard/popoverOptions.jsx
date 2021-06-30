@@ -8,32 +8,38 @@ import AddAlertIcon from '@material-ui/icons/AddAlert';
 import { withRouter } from 'react-router-dom';
 import './popOver.scss';
 import { useState } from 'react';
+import { SettingsPowerRounded } from '@material-ui/icons';
 
-const PopoverPopupState = () => {
+const PopoverPopupState = ({propChip, openReminder, anchorVar}) => {
+  const [open, setOpen] = React.useState(false);
   let [chip, setChip] = React.useState("");
+  const [openRemindme, setOpenRemindme] = useState(false);
+  const [anchor, setAnchor] = useState(null);
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  // const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setOpenRemindme(!openRemindme);
+            setAnchor(event.currentTarget);
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
-    setChip(chip = "today 8:00PM");
+    // setAnchorEl(null);
+    setChip("today 8:00PM");
     console.log("chip val: ", chip);
+    propChip(chip);
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  // const open = Boolean(anchorEl);
+  
 
   return (
     <div>
-      <AddAlertIcon aria-describedby={id} variant="contained" color="action" onClick={handleClick}/>
+      <AddAlertIcon  variant="contained" color="action" onClick={handleClick} />
       <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
+       
+        open={openRemindme}
+        anchorEl={anchor}
         onClose={handleClose}
         anchorOrigin={{
           vertical: 'bottom',
@@ -47,7 +53,11 @@ const PopoverPopupState = () => {
         <div style={{padding:"15px"}}>
             <Typography style={{fontSize:"20px"}} >Reminder:</Typography>
               <div style={{padding:"8px"}} >
-                  <div id="pop-style" onClick={handleClose} >Later Today   8:00PM</div>
+                  <div id="pop-style" onClick={() => {
+                setChip("today 8:00PM");
+                propChip("today 8:00PM");
+                setOpenRemindme(false);
+            }} >Later Today   8:00PM</div>
                   <div id="pop-style" aria-valuetext="">Tommorrow   8:00AM</div>
                   <div id="pop-style" aria-valuetext="">Next Day   8:00PM</div>
                   <div id="pop-style" >Pick Date and Time</div>

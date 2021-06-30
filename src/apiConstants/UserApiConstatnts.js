@@ -1,7 +1,7 @@
 module.exports = {
-    signUp: "userSignUp",
-    login: "login",
-    forgotPassword : "reset",
-    resetPassword : "reset-password"
+    signUp: "user/userSignUp",
+    login: "user/login",
+    forgotPassword : "user/reset",
+    resetPassword : "user/reset-password"
 }
     

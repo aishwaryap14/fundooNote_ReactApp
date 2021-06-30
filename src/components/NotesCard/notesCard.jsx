@@ -16,10 +16,11 @@ import Chip from '@material-ui/core/Chip';
 // import './popoverOptions';
 import Remindme from './popoverOptions';
 
-    const NoteCard = (propChip) => {
-        console.log("chip props: ", propChip);
+    const NoteCard = () => {
+        // console.log("chip props: ", propChip);
         const [openCard, setOpenCard] = useState(true);
-        const [openRemindme, setOpenRemindme] = useState(false);
+        const [chipVar, setChipVar] = useState("");
+    
 
         const handleOpenNote =() => {
             setOpenCard(false) ;
@@ -30,11 +31,12 @@ import Remindme from './popoverOptions';
             console.log("after", openCard);
         }
         
-        const handleRemindMe = () => {
-            setOpenRemindme(!openRemindme);
-            console.log("setOpenRemindme", openRemindme);
-        }
+
         
+        const getReminder = (reminder) => {
+            console.log("chipval", reminder);
+            setChipVar(reminder);
+        }
 
         return(
         openCard ?
@@ -46,15 +48,10 @@ import Remindme from './popoverOptions';
             <InputBase className="card-content"  placeholder="Title" aria-label="Title" style={{fontSize:'1.5rem'}}/>
             
             <InputBase className="card-content"  placeholder="Discription" aria-label="Discription" style={{fontSize:'1.5rem'}} />
-            <div>
-                <Chip>
-                <Avatar><AccessTimeIcon /></Avatar>
-                <div>{propChip}</div>
-                </Chip>
-            </div>
+            {chipVar === "" ? null : <Chip label={chipVar}></Chip>}
             <div className="options-icon">
             <div className="notecard-icon">
-                <PopoverPopupState fontSize='medium'  title='remind me' id ="AddAlertIcon" onClick={handleRemindMe} />
+                <PopoverPopupState fontSize='medium'  title='remind me' id ="AddAlertIcon"   propChip={getReminder}/>
 
                 <PersonAddIcon fontSize='medium' id="PersonAddIcon"/>
                 <ColorLensIcon fontSize='medium' id="ColorLensIcon" />
