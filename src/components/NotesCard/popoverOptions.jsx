@@ -10,13 +10,11 @@ import './popOver.scss';
 import { useState } from 'react';
 import { SettingsPowerRounded } from '@material-ui/icons';
 
-const PopoverPopupState = ({propChip, openReminder, anchorVar}) => {
+const PopoverPopupState = ({propChip}) => {
   const [open, setOpen] = React.useState(false);
   let [chip, setChip] = React.useState("");
   const [openRemindme, setOpenRemindme] = useState(false);
   const [anchor, setAnchor] = useState(null);
-
-  // const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
     setOpenRemindme(!openRemindme);
@@ -24,13 +22,12 @@ const PopoverPopupState = ({propChip, openReminder, anchorVar}) => {
   };
 
   const handleClose = () => {
-    // setAnchorEl(null);
+    setOpenRemindme(false);
     setChip("today 8:00PM");
     console.log("chip val: ", chip);
     propChip(chip);
   };
 
-  // const open = Boolean(anchorEl);
   
 
   return (
