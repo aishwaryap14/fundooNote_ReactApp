@@ -25,7 +25,7 @@ import Remindme from './popoverOptions';
         let [isArchived, setIsArchived] = useState(false);
         const [openCard, setOpenCard] = useState(true);
         const [chipVar, setChipVar] = useState("");
-        var [color, setColor] = useState();
+        var [color, setColor] = useState(null);
     
 
         const handleOpenNote =() => {
@@ -37,13 +37,16 @@ import Remindme from './popoverOptions';
             console.log("after", openCard);
             let formData = {
                 title: title,
-                description: description
+                description: description,
+                isArchived: isArchived,
+                color: color
             }
             console.log("addNotedata:", formData);
             if(title !== null || description !== null){
               await  addNotes(formData).then((res) => {
                     console.log("in add note if block");
                     console.log(res);
+                    // setTitle("");
                 });
             } else {
                 console.log("in add Note else block")

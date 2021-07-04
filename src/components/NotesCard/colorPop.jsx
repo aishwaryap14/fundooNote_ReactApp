@@ -31,51 +31,51 @@ const Coltheme = createMuiTheme( {
 const ColorPopUp = ({ propColor, changeColor }) => {
     const colorCodeArray = [
         {
-            rgbCode: "rgb(255,255,255)",
+            rgbCode: "#FFFFFF",
             ColorName: "white"
         },
         {
-            rgbCode: "rgb(250,128,114)",
+            rgbCode: "#FA8072",
             ColorName: "red"
         },
         {
-            rgbCode: "rgb(255,255,0)",
+            rgbCode: "#FFFF00",
             ColorName: "yellow"
         },
         {
-            rgbCode: "rgb(244,164,96)",
+            rgbCode: "#F4A460",
             ColorName: "orange"
         },
         {
-            rgbCode: "rgb(152,251,152)",
+            rgbCode: "#98FB98",
             ColorName: "green"
         },
         {
-            rgbCode: "rgb(173,216,230)",
+            rgbCode: "#ADD8E6",
             ColorName: "blue"
         },
         {
-            rgbCode: "rgb(127,255,212)",
+            rgbCode: "#7FFFD4",
             ColorName: "aqua"
         },
         {
-            rgbCode: "rgb(221,160,221)",
+            rgbCode: "#DDA0DD",
             ColorName: "purple"
         },
         {
-            rgbCode: "rgb(255,105,180)",
+            rgbCode: "#FF69B4",
             ColorName: "magenta"
         },
         {
-            rgbCode: "rgb(255,192,203)",
+            rgbCode: "#FFC0CB",
             ColorName: "pink"
         },
         {
-            rgbCode: "rgb(255,228,181)",
+            rgbCode: "#FFE4C4",
             ColorName: "brown"
         },
         {
-            rgbCode: "rgb(230,230,250)",
+            rgbCode: "#E6E6FA",
             ColorName: "lavender"
         }
     ]
