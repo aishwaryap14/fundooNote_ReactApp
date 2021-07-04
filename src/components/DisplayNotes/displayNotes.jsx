@@ -28,7 +28,7 @@ const DisplayNote = props => {
         // console.log("token Id: ", this.props.match.params.token)
         // localStorage.setItem('token',this.props.match.params.token);
         // console.log("token localStorage: ", this.props.match.params.token);
-        console.log("in use effect of get note")
+        // console.log("in use effect of get note")
         getAllNotes().then((res) => {
             // console.log("response: ", res.data.data.data);
             let notesData = res.data.data.data;

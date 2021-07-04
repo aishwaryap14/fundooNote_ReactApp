@@ -7,14 +7,27 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import AddAlertIcon from '@material-ui/icons/AddAlert';
 import { withRouter } from 'react-router-dom';
 import './popOver.scss';
+import { createMuiTheme, MuiThemeProvider} from '@material-ui/core';
 import { useState } from 'react';
 import { SettingsPowerRounded } from '@material-ui/icons';
+
+const Poptheme = createMuiTheme( {
+  overrides: {
+      MuiPopover:{
+          paper:{
+              width: "210px",
+              background:"white"
+          }
+      }
+  }
+});
 
 const PopoverPopupState = ({propChip}) => {
   const [open, setOpen] = React.useState(false);
   let [chip, setChip] = React.useState("");
   const [openRemindme, setOpenRemindme] = useState(false);
   const [anchor, setAnchor] = useState(null);
+ 
 
   const handleClick = (event) => {
     setOpenRemindme(!openRemindme);
@@ -23,7 +36,6 @@ const PopoverPopupState = ({propChip}) => {
 
   const handleClose = () => {
     setOpenRemindme(false);
-    setChip("today 8:00PM");
     console.log("chip val: ", chip);
     propChip(chip);
   };
@@ -31,7 +43,7 @@ const PopoverPopupState = ({propChip}) => {
   
 
   return (
-    <div>
+    <MuiThemeProvider theme = {Poptheme}>
       <AddAlertIcon  variant="contained" color="action" onClick={handleClick} />
       <Popover
        
@@ -51,17 +63,15 @@ const PopoverPopupState = ({propChip}) => {
             <Typography style={{fontSize:"20px"}} >Reminder:</Typography>
               <div style={{padding:"8px"}} >
                   <div id="pop-style" onClick={() => {
-                setChip("today 8:00PM");
                 propChip("today 8:00PM");
                 setOpenRemindme(false);
             }} >Later Today   8:00PM</div>
-                  <div id="pop-style" aria-valuetext="">Tommorrow   8:00AM</div>
-                  <div id="pop-style" aria-valuetext="">Next Day   8:00PM</div>
+                  <div id="pop-style" onClick={() => {propChip("Tommorrow   8:00AM"); setOpenRemindme(false);}}>Tommorrow   8:00AM</div>
                   <div id="pop-style" >Pick Date and Time</div>
               </div>
             </div>
       </Popover>
-    </div>
+    </MuiThemeProvider>
   );
 
 }

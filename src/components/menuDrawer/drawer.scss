@@ -13,12 +13,22 @@
     align-items: center;
     margin-top: 40px;
 }
+.notes-image:hover{
+    background-color: #d4d3d3;
+    border-radius: 0px 35px 35px 0px;
+    cursor: pointer;
+}
 
 .reminder-image {
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.reminder-image:hover{
+    background-color: #d4d3d3;
+    border-radius: 0px 35px 35px 0px;
+    cursor: pointer;
 }
 
 .editCard-labels {
@@ -27,6 +37,11 @@
     justify-content: space-between;
     align-items: center;
 }
+.editCard-labels:hover{
+    background-color: #d4d3d3;
+    border-radius: 0px 35px 35px 0px;
+    cursor: pointer;
+}
 
 .archive-mode {
     padding: 20px;
@@ -34,12 +49,22 @@
     justify-content: space-between;
     align-items: center;
 }
+.archive-mode:hover{
+    background-color: #d4d3d3;
+    border-radius: 0px 35px 35px 0px;
+    cursor: pointer;
+}
 
 .trash-image {
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.trash-image:hover{
+    background-color: #d4d3d3;
+    border-radius: 0px 35px 35px 0px;
+    cursor: pointer;
 }
 
 .swipe-drawer {

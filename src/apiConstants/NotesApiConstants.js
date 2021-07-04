@@ -1,4 +1,5 @@
 module.exports = {
-   getAllNotes: "notes/getNotesList"
+   getAllNotes: "notes/getNotesList",
+   addNote: "notes/addNotes"
 }
     

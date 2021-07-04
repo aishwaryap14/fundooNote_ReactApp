@@ -28,8 +28,9 @@ const theme = createMuiTheme( {
             height: "100%",
             width: "190px",
             outline: "0",
-            background:"#fafafa",
-            zIndex: "0"
+            // background:"#fafafa",
+            zIndex: "0",
+           
             },
             paperAnchorDockedLeft:{
                 borderRight:"none"
@@ -53,17 +54,10 @@ const theme = createMuiTheme( {
   
 
  
-  const [open, setOpen] = React.useState(propsOpenDrawer);
-  console.log("open val11: ",open)
+
   const [anchor, setAnchor] = React.useState([{left:false}]);
   
 
-  const handleDrawer = () => {
-    //   console.log("in handleDrawer: ", event)
-    setOpen(!open);
-    // console.log("in handleDrawer: ", state)
-      console.log("open val: ",open)
-  }
 
 
 
@@ -74,13 +68,10 @@ const theme = createMuiTheme( {
             <Drawer className="swipe-drawer" anchor={"left"} 
             open={propsOpenDrawer} variant="persistent"
             style={{width:"240px",top:"80px"}}>
-                {/* {list(anchor)} */}
+               
 
         <div  >
-           
-
-
-            <div className="notes-image">
+           <div className="notes-image">
                 <div>
                 <NoteIcon fontSize="large" color="action"/>
                 </div>

@@ -7,16 +7,16 @@ import { useEffect } from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
 import './colorPop.scss';
 
-const theme = createMuiTheme( {
+const Coltheme = createMuiTheme( {
     overrides: {
         MuiPopover:{
             paper:{
                 display: "flex",
                 // height: "100px",
                 flexWrap: "wrap",
-                width:"400px",
+                // width:"400px",
                 padding:"4px",
-                backgroundColor:"rgb(0 0 0 / 25%)"
+                background:"white"
             }
         },
         MuiIconButton:{
@@ -101,7 +101,7 @@ const ColorPopUp = ({ propColor, changeColor }) => {
 
     // console.log("colorArr: ", colorArr);
     return (
-        <MuiThemeProvider theme = {theme}>
+        <MuiThemeProvider theme = {Coltheme}>
             <div>
             <ColorLensIcon fontSize='medium' id="ColorLensIcon" onClick={handleClick} />
             <Popover className="color-plate"
@@ -120,18 +120,9 @@ const ColorPopUp = ({ propColor, changeColor }) => {
                 {colorArr.map((option, index) => {
 
                     return (
-                        // <div>
-                        //     <div style={{padding:"5px"}} >
-                        //         <Tooltip title={option.ColorName} >
-                        //         <div style={{backgroundColor:option.rgbCode}}
-                        //             onClick={() => {propColor(option.key);setOpenColor(false);}}><a><span key={index}>{option.ColorName}</span></a></div>
-                        //         </Tooltip>
-                        //     </div>
-
-                        // </div>
                         <div >
                             <Tooltip title={option.ColorName}>
-                                <IconButton style={{ backgroundColor: option.rgbCode , border:"1px solid grey"}}
+                                <IconButton style={{ backgroundColor: option.rgbCode , border:"0.3px solid grey"}}
                                     value={option.rgbCode}
                                     onClick={(event) => {propColor(event.target.value);setOpenColor(false);}}>
 
