@@ -65,8 +65,8 @@ import Remindme from './popoverOptions';
             console.log("title: ", description);
         }
 
-        const handleArchieves = (event) => {
-            setIsArchived(!event);
+        const handleArchieves = () => {
+            setIsArchived(!isArchived);
             console.log("IsArchieved: ", isArchived);
         }
         
@@ -111,7 +111,7 @@ import Remindme from './popoverOptions';
                 <MoreVertIcon fontSize='medium' id="MoreVertIcon" />
             </div>
                 <div className="close-button">
-                <a className="close-note" title="Close" value="Close" onClick={handleCloseNotes}>Close</a>
+                <a className="close-note" title="Close" value="Close"  onClick={handleCloseNotes}>Close</a>
                 </div>
             </div>
 
