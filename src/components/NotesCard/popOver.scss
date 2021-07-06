@@ -2,7 +2,13 @@
     font-size: 15px;
     margin: 5px;
     padding: 8px;
+    display: flex;
+    align-items: flex-end;
 }
 #pop-style:hover{
     background: #e6e3e3;
+}
+
+.react-calendar {
+    width: 230px;
 }

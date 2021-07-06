@@ -9,13 +9,16 @@ import { withRouter } from 'react-router-dom';
 import './popOver.scss';
 import { createMuiTheme, MuiThemeProvider} from '@material-ui/core';
 import { useState } from 'react';
-import { SettingsPowerRounded } from '@material-ui/icons';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const Poptheme = createMuiTheme( {
   overrides: {
       MuiPopover:{
           paper:{
-              width: "210px",
+              width: "230px",
               background:"white"
           }
       }
@@ -23,7 +26,7 @@ const Poptheme = createMuiTheme( {
 });
 
 const PopoverPopupState = ({propChip}) => {
-  const [open, setOpen] = React.useState(false);
+  const [openPop, setOpenPop] = React.useState(false);
   let [chip, setChip] = React.useState("");
   const [openRemindme, setOpenRemindme] = useState(false);
   const [anchor, setAnchor] = useState(null);
@@ -40,6 +43,9 @@ const PopoverPopupState = ({propChip}) => {
     propChip(chip);
   };
 
+  const handlepopOvercontent = () => {
+    setOpenPop(!openPop)
+  }
   
 
   return (
@@ -59,17 +65,23 @@ const PopoverPopupState = ({propChip}) => {
           horizontal: 'center',
         }}
       >
-        <div style={{padding:"15px"}}>
-            <Typography style={{fontSize:"20px"}} >Reminder:</Typography>
-              <div style={{padding:"8px"}} >
-                  <div id="pop-style" onClick={() => {
-                propChip("today 8:00PM");
-                setOpenRemindme(false);
-            }} >Later Today   8:00PM</div>
+        {openPop ? 
+        (
+          <div>
+          <div style={{display:"flex",padding:"5px"}}><ArrowBackIcon style={{marginRight:"5px"}} onClick={handlepopOvercontent}/> Pick Date and Time</div>
+          <div style={{width:"230px"}}><Calendar /></div>
+          </div>
+        ) :
+            (
+            <div style={{padding:"15px"}}>
+              <Typography style={{fontSize:"20px"}} >Reminder:</Typography>
+                <div style={{padding:"8px"}} >
+                  <div id="pop-style" onClick={() => {propChip("today 8:00PM"); setOpenRemindme(false)}} >Later Today   8:00PM</div>
                   <div id="pop-style" onClick={() => {propChip("Tommorrow   8:00AM"); setOpenRemindme(false);}}>Tommorrow   8:00AM</div>
-                  <div id="pop-style" >Pick Date and Time</div>
-              </div>
+                  <div id="pop-style" onClick={handlepopOvercontent} ><AccessTimeIcon /> Pick Date and Time</div>
+                </div>
             </div>
+            )}
       </Popover>
     </MuiThemeProvider>
   );

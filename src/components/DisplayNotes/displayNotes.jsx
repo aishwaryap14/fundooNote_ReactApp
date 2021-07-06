@@ -8,12 +8,15 @@ import ColorLensIcon from '@material-ui/icons/ColorLens';
 import ImageIcon from '@material-ui/icons/Image';
 import ArchiveIcon from '@material-ui/icons/Archive';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Chip from '@material-ui/core/Chip';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import Avatar from '@material-ui/core/Avatar';
+import PopoverPopupState from '../NotesCard/popoverOptions'
 
 const DisplayNote = (propColor) => {
-    const [allNotes, setAllNotes]= useState([]);
-    // let [color, setColor] = useState(null);
-   
-
+    const [allNotes, setAllNotes] = useState([]);
+    // const [reminder, setReminder] = useState([]);
+    const [chipVar, setChipVar] = useState("");
     useEffect(() => {
       
         getAllNotes().then((res) => {
@@ -27,6 +30,10 @@ const DisplayNote = (propColor) => {
         })
     });
 
+    const getReminder = (reminder) => {
+        console.log("chipval", reminder);
+        setChipVar(reminder);
+    }
 
     return(
         <div className="cards">
@@ -38,8 +45,10 @@ const DisplayNote = (propColor) => {
                     <p className="cards-display" style={{background:notes.color}}>
                     <strong>{notes.title}</strong>
                     <p>{notes.description}</p>
+                    <p>{notes.reminder == "" ? null : <Chip avatar={<Avatar><AccessTimeIcon/></Avatar>} label={notes.reminder}></Chip>}</p>
                     <div className="notecard-icon">
-                        <AddAlertIcon fontSize='medium'title='remind me' id ="AddAlertIcon"  />
+                        {/* <AddAlertIcon fontSize='medium'title='remind me' id ="AddAlertIcon"  /> */}
+                        <PopoverPopupState  propChip={getReminder}/>
                         <PersonAddIcon fontSize='medium' id="PersonAddIcon"/>
                         <ColorLensIcon fontSize='medium' id="ColorLensIcon" />
                         <ImageIcon fontSize='medium' id="ImageIcon"/>
