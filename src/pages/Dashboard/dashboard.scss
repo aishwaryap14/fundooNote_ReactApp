@@ -2,7 +2,7 @@
 .dashAppbar{
     color: #fb0;
     background:#fb0;
-    padding: 15px;
+    padding: 5px;
     height: 45px;
   }
 
@@ -69,3 +69,37 @@
    margin-top: -20px;
    margin-left: -10px;
  }
+
+ @media (min-width: 300px) and (max-width: 500px) {
+  .dashAppbar{
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+  }
+  .searchBar{
+    width: 42%;
+  }
+  .dashboardTools{
+    display: flex;
+    justify-content: end;
+    width: fit-content;
+  }
+
+}
+
+@media (min-width: 540px) and (max-width: 900px) {
+  .dashAppbar{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .searchBar{
+    width: 50%;
+  }
+  .dashboardTools{
+    display: flex;
+    justify-content: end;
+    width: fit-content;
+  }
+
+}

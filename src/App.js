@@ -11,7 +11,9 @@ import ForgotPwd from './pages/ForgotPassword/forgotPwd';
 import Allnotes from './components/DisplayNotes/displayNotes'
 import hooks from './components/DisplayNotes/hooks'
 import TemporaryDrawer from './components/menuDrawer/drawer2'
-
+import counter from './components/NotesCard/counter'
+import A from './components/NotesCard/counterParent';
+import B from './components/NotesCard/compB'
 function App() {
   return (
     <div className="App">
@@ -28,6 +30,9 @@ function App() {
           <Route excat path="/allnotes" component={Allnotes}/>
           <Route exact path="/hooks" component={hooks}/>
           <Route exact path="/dra" component={TemporaryDrawer}/>
+          <Route exact path="/counter" component={counter}/>
+          <Route exact path="/comp" component={A}/>
+          <Route exact path="/comp" component={B}/>
         </Switch>
       </Router>
     </div>

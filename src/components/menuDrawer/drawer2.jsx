@@ -23,15 +23,19 @@ const theme = createMuiTheme( {
     overrides: {
         MuiDrawer:{
             paperAnchorLeft:{
-            top: "79px",
+            top: "55px",
             // left: "60px",
             height: "100%",
             width: "190px",
             outline: "0",
             // background:"#fafafa",
             zIndex: "0",
-           
-            },
+           },
+           MuiDrawer:{
+            paperAnchorLeft:{
+                top:"55px"
+            }
+           },
             paperAnchorDockedLeft:{
                 borderRight:"none"
             },

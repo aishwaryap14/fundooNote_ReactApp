@@ -1,0 +1,22 @@
+.profile-pop {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.profile-pic{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.Account-details{
+    padding: 10px;
+}
+.totalProfilePop{
+    display: flex;
+    // flex-direction: column;
+}
+.signUp-btn{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}

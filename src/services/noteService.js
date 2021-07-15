@@ -31,3 +31,17 @@ export function addNotes(formData) {
     }
        
 }
+
+export function updateNote(formData) {
+    try {
+        const response = axios.post(process.env.REACT_APP_BASE_URL + NotesApiConstants.updateNoteDetail , formData,{
+            headers: {
+                // Authorization: localStorage.getItem('token')
+                Authorization: localStorage.getItem('token')
+            }
+        });
+        return response;
+    } catch (error) {
+        return error;
+    }
+}

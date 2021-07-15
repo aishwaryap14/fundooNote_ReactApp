@@ -9,7 +9,7 @@ import DisplayNotes from '../../components/DisplayNotes/displayNotes';
 import MenuIcon from '@material-ui/icons/Menu';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import ListIcon from '@material-ui/icons/List';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ProfilePic from '../../components/ProfilePic/profile'
 
 
 
@@ -30,7 +30,11 @@ class DashBoard extends Component {
         })
     }
 
-    
+    // handlePropfilePop = () => {
+    //     this.setState({
+    //         openProfilePop:!this.state.openProfilePop
+    //     })
+    // }
 
 render(){
     return( 
@@ -64,7 +68,7 @@ render(){
                 <ListIcon fontSize="large" color="action" />
             </div>
             <div className="user-icon">
-                <AccountCircleIcon fontSize="large" color="action" />
+                <ProfilePic style={{fontSize:"10px"}}/>
             </div>
         </div>
     </div>

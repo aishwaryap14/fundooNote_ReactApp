@@ -25,8 +25,11 @@ import Remindme from './popoverOptions';
         let [isArchived, setIsArchived] = useState(false);
         const [openCard, setOpenCard] = useState(true);
         const [chipVar, setChipVar] = useState("");
-        var [color, setColor] = useState(null);
-    
+        var [color, setColor] = useState("");
+        var [reminder, setReminder] = useState("");
+        var [remdate, setRemdate] = useState("");
+        var [remtime, setRemtime] = useState("");
+        // var chip = remdate + remtime;
 
         const handleOpenNote =() => {
             setOpenCard(false) ;
@@ -39,7 +42,8 @@ import Remindme from './popoverOptions';
                 title: title,
                 description: description,
                 isArchived: isArchived,
-                color: color
+                color: color,
+                reminder: reminder
             }
             console.log("addNotedata:", formData);
             if(title !== null || description !== null){
@@ -70,9 +74,22 @@ import Remindme from './popoverOptions';
             console.log("IsArchieved: ", isArchived);
         }
         
-        const getReminder = (reminder) => {
-            console.log("chipval", reminder);
-            setChipVar(reminder);
+        const getReminder = (chip) => {
+            console.log("chipval", chip);
+            setChipVar(chip);
+            // setChipVar(remdate + remtime);
+            setReminder(chip)
+        }
+
+        const getDate = (date) => {
+            console.log("date: ", date);
+            // console.log("time: ", time);
+            setRemdate(date );
+        }
+
+        const getTime = (time) => {
+            console.log("Time: ", time);
+            setRemtime(time);
         }
 
         const setNoteCardColor = (notecolor) => {
@@ -88,7 +105,7 @@ import Remindme from './popoverOptions';
         return(
         openCard ?
         (<Card className="note-card"   onClick={handleOpenNote}>
-            <InputBase className="card-content"  placeholder="Take a Note.." aria-label="Take a Note..." style={{fontSize:'1.5rem'}} />
+            <InputBase className="card-content"  placeholder="Take a Note.."   aria-label="Take a Note..." style={{fontSize:'1.5rem'}} />
         </Card>)
         :
         (<Card className="note-title"  style={{background:color}} >
@@ -102,7 +119,7 @@ import Remindme from './popoverOptions';
                 </Chip> }
             <div className="options-icon">
             <div className="notecard-icon">
-                <PopoverPopupState fontSize='medium'  title='remind me' id ="AddAlertIcon"   propChip={getReminder} />
+                <PopoverPopupState fontSize='medium'  title='remind me' id ="AddAlertIcon" propDate={getDate} propTime={getTime} propChip={getReminder} />
 
                 <PersonAddIcon fontSize='medium' id="PersonAddIcon"/>
                 <ColorPopUp fontSize='medium' id="ColorLensIcon" propColor={setNoteCardColor}/>
